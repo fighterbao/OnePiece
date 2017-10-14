@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 设置上传文件大小200M -->
+	<!-- <constant name="struts.multipart.maxSize" value="209715200"></constant> -->
+	<!-- 
+	开发模式，默认是false表示生成模式，true表示开发模式，当修改struts.xml文件的时候，自动加载xml的文件（此时不需要重新启动服务器）
+			同时可以在控制台打印出更详细的错误信息 
+	 -->
+	<constant name="struts.devMode" value="true"></constant>
+	
+	<!-- 开启struts2的动态方法调用 ，false表示没有开启该功能-->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+	
+	<!-- <package name="form1" namespace="/" extends="struts-default">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="success">/index.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="customer_*" class="customerAction" method="{1}">
+			<result name="add">/jsp/customer/add.jsp</result>
+			<result name="save" type="redirectAction">customer_list</result>
+			<result name="list">/jsp/customer/list.jsp</result>
+			<result name="delete" type="redirectAction">customer_list</result>
+		    <result name="edit">/jsp/customer/edit.jsp</result>
+		    <result name="update" type="redirectAction">customer_list</result>
+		     <result name="pagelist">/jsp/customer/pagelist.jsp</result>
+		    <result name="search">/jsp/customer/list.jsp</result>
+		</action>
+		<action name="linkman_*" class="LinkManAction" method="{1}">
+			<result name="toadd">/jsp/linkman/add.jsp</result>
+			<result name="add" type="redirectAction">linkman_list</result>
+			<result name="input">/error.jsp</result>
+			<result name="list">/jsp/linkman/list.jsp</result>
+			<result name="edit">/jsp/linkman/edit.jsp</result>
+			<result name="update" type="redirectAction">linkman_list</result>
+		</action>
+		<action name="visit_*" class="VisitAction" method="{1}">
+			<result name="toadd">/jsp/visit/add.jsp</result>
+			<result name="add" type="redirectAction">visit_list</result>
+			<result name="list">/jsp/visit/list.jsp</result>
+		</action>
+	</package> -->
+	<package name="one" namespace="/" extends="struts-default">
+		<action name="main_*" class="mainaction" method="{1}">
+			<result name="ok">ok.jsp</result>
+		</action>
+	</package>
+	
+</struts>

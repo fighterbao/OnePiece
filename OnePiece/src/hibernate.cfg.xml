@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 连接数据库 -->
+		<!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sshcrm</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property> -->
+		
+		<!-- 其他配置 -->
+		<!-- 
+			对应关系映射，默认值：none：不能使用持久化对象创建数据库表的，只能操作已有的表
+			create：如果表不存在，可以创建数据库表，每次操作都会删除表再创建表
+			update：如果没有表，创建表，有表，直接操作表
+		 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- 
+		方言：hibernate用于各种数据库的操作，说明操作的数据库是mysql数据，主要用于使用hibernate操作查询方式（增删改操作都是一致的，都是insert，update，delete），
+			如果查询语句进行查询，指定hibernate的方言，用于跟踪查询语句
+		 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!-- 
+			是否在控制台中显示sql语句
+		 -->
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- <mapping resource="cn/wjb/entity/User.hbm.xml"/>
+		<mapping resource="cn/wjb/entity/Customer.hbm.xml"/>
+		<mapping resource="cn/wjb/entity/LinkMan.hbm.xml"/>
+		<mapping resource="cn/wjb/entity/Visit.hbm.xml"/> -->
+		<mapping resource="cn/wjb/entity/PersonInfo.hbm.xml"/>
+		<mapping resource="cn/wjb/entity/User.hbm.xml"/>
+		
+	</session-factory>
+</hibernate-configuration>

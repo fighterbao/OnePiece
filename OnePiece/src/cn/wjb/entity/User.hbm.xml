@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 
+		* class:映射持久化对象与数据库表的关联
+			* name：持久化对象类（全路径）
+			* table
+		* id:用来映射主键
+			* <generator class=""></generator>：主键生成策略（代理主键和自然主键）
+		* property：映射持久化对象中的属性和数据库表的字段建立关联关系
+			* name：持久化对象属性名称
+			* type：表示hibernate的映射类型（可以不写：默认如果持久化对象中的属性是String，默认填写：java.lang.String）
+			   * 写成：java.lang.String
+			   * 写成：hibernate定义的类型，string
+			  * Hibernate映射类型是java类型与SQL类型的桥梁
+			* column：表示字段列
+	 -->
+	<class name="cn.wjb.entity.User" table="user">
+		<id name="id" type="integer" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="username" type="string" column="username"></property>
+		<property name="password" type="string" column="password"></property>
+		<property name="email" type="string" column="email"></property>
+		<property name="code" type="string" column="code"></property>
+		<property name="state" type="string" column="state"></property>
+		<!-- 表示多条拜访记录 -->
+		<!-- <set name="setUserVisit">
+			<key column="uvid"></key>
+			<one-to-many class="cn.wjb.entity.Visit"/>
+		</set> -->
+		
+	</class>
+</hibernate-mapping>
